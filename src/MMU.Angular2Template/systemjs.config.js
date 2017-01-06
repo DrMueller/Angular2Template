@@ -18,17 +18,6 @@ var packages = {
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
 };
 
-//var barrels = [
-//    // App specific barrels.
-//    'app/routing',
-//    'app/shared',
-//    'app/models',
-//    'app/syndication/fullload'
-//];
-//barrels.forEach(function (barrelName) {
-//    packages[barrelName] = { main: 'index' };
-//});
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
