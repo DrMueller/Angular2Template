@@ -6,6 +6,7 @@ import { routing, appRoutingProviders } from "./app.routing";
 
 import { Feature1Module } from "./feature1/feature1.module"; 
 
+import * as sharedServices from "./shared/services/index";
 
 @NgModule({
     imports: [
@@ -17,7 +18,8 @@ import { Feature1Module } from "./feature1/feature1.module";
         AppComponent
     ],
     providers: [
-        appRoutingProviders
+        appRoutingProviders,
+        sharedServices.HttpService
     ],
     bootstrap: [AppComponent]
 })

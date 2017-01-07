@@ -1,5 +1,7 @@
 ﻿import { Component, OnInit } from "@angular/core";
 
+import * as services from "../shared/services/index";
+import * as models from "../shared/models/index";
 
 @Component({
     moduleId: module.id,
@@ -7,15 +9,30 @@
 })
 
 export class Part1ListComponent implements OnInit {
-    private numbers: number[];
+    private helloWorlds: models.HelloWorld[];
+    private errorWarning: string;
 
-    public constructor() {
-        this.numbers = [];
+    public constructor(private helloWorldService: services.HelloWorldService) {
+        this.helloWorlds = [];
+    }
+
+    private throwException(): void {
+        this.helloWorldService.throwException()
+        .then((result: models.HelloWorld[]) => {
+            this.helloWorlds = result;
+        })
+            .catch((rejectedReason: any) => {
+                this.errorWarning = rejectedReason;
+            });
     }
 
     public ngOnInit() {
-        for (let i = 0; i < 5; i++) {
-            this.numbers.push(i);
-        }
+        this.helloWorldService.getHelloWorlds()
+            .then((result: models.HelloWorld[]) => {
+                this.helloWorlds = result;
+            })
+            .catch((rejectedReason: any) => {
+                this.errorWarning =  rejectedReason;
+            });
     }
 }

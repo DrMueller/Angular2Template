@@ -7,6 +7,7 @@ Style-Guide Brainstorming:
 - Every Sub-Feature has it's own barrel
 - Every folder and file-name in the app-section is writtien in lower case
 - instead of camel case, - can be used for better readability
+- Observables only in Services, otherwise Promises (According to Ward Bell), except if a stream is in fact needed
 
 Routing:
 - The most specific Routes should always come before the more general ones

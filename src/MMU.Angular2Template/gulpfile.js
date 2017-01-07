@@ -79,24 +79,26 @@ gulp.task("html",
 
     });
 
+gulp.task("init", ["html", "less", "ts", "nm"]);
+
 gulp.task("watch", ["watch.ts", "watch.html", "watch.less"]);
 
-gulp.task("watch.ts",
-    ["ts"],
-    function () {
-        return gulp.watch("app/**/*.ts", ["ts"]);
-    });
+        gulp.task("watch.ts",
+            ["ts"],
+            function () {
+                return gulp.watch("app/**/*.ts", ["ts"]);
+            });
 
-gulp.task("watch.html",
-    ["html"],
-    function () {
-        return gulp.watch("app/**/*.html", ["html"]);
-    });
+        gulp.task("watch.html",
+            ["html"],
+            function () {
+                return gulp.watch("app/**/*.html", ["html"]);
+            });
 
-gulp.task("watch.less",
-    ["less"],
-    function () {
-        return gulp.watch("app/**/*.less", ["less"]);
-    });
+        gulp.task("watch.less",
+            ["less"],
+            function () {
+                return gulp.watch("app/**/*.less", ["less"]);
+            });
 
 gulp.task("default", ["nm", "watch"]);

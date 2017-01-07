@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit, Input } from "@angular/core";
-
+import * as models from "../shared/models/index";
 
 @Component({
     moduleId: module.id,
@@ -11,7 +11,7 @@ export class Part1Component {
     private name: string;
 
     @Input()
-    public oneNumber: number;
+    public helloWorld: models.HelloWorld;
 
     constructor() {
         this.name = "Part 1";

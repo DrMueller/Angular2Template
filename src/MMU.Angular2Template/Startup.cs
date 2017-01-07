@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using MMU.Angular2Template.Middlewares;
 
 namespace MMU.Angular2Template
 {
@@ -25,12 +26,14 @@ namespace MMU.Angular2Template
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseMiddleware(typeof(ErrorHandlingMiddleware));
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
             app.UseDefaultFiles();
 
-            //app.UseMvc();
+            app.UseMvc();
 
             // Route all unknown requests to app root
             app.Use(async (context, next) =>
@@ -54,6 +57,7 @@ namespace MMU.Angular2Template
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
     }
 }
