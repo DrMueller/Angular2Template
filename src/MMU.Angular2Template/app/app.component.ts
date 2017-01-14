@@ -1,5 +1,5 @@
 ﻿import { Component } from "@angular/core";
-import "./shared/rxjs-extensions";
+import "./core/infrastructure/rxjs-extensions";
 
 @Component({
     moduleId: module.id,

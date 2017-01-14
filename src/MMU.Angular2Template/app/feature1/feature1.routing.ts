@@ -4,7 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import * as current from "./index";
 
 import { Feature1Component } from "./feature1.component";
-import { Part1ListComponent } from "./part1-list/part1-list.component";
+import * as part1List from "./part1-list/index";
 
 const feature1Routes: Routes = [
     {
@@ -12,8 +12,7 @@ const feature1Routes: Routes = [
         component: Feature1Component,
         children: [
             { path: "", redirectTo: "part1list", pathMatch: "full" },
-            { path: "part1", component: current.Part1Component },
-            { path: "part1list", component: Part1ListComponent }
+            { path: "part1list", component: part1List.Part1ListComponent }
         ]
     }
 ];

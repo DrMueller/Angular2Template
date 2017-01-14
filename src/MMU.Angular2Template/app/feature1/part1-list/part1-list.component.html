@@ -32,13 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let hw of helloWorlds">
-                    <td>{{ hw.greetingsMessage }}</td>
-                    <td>{{ hw.greetingsDate }}</td>
-                    <td>{{ hw.greetedPersons }}</td>
-
-                    <!--<part1 [helloWorld]="lw"></part1>-->
-                </tr>
+            <tr *ngFor="let hw of helloWorlds" part1-tr [helloWorld]="hw"></tr>
             </tbody>
         </table>
     </div>

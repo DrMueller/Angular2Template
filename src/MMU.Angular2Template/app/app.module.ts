@@ -4,22 +4,19 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { routing, appRoutingProviders } from "./app.routing";
 
-import { Feature1Module } from "./feature1/feature1.module"; 
-
-import * as sharedServices from "./shared/services/index";
+import * as feature1 from "./feature1/index"; 
 
 @NgModule({
     imports: [
         BrowserModule,
         routing,
-        Feature1Module
+        feature1.Feature1Module
     ],
     declarations: [
         AppComponent
     ],
     providers: [
-        appRoutingProviders,
-        sharedServices.HttpService
+        appRoutingProviders
     ],
     bootstrap: [AppComponent]
 })

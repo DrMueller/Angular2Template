@@ -9,3 +9,46 @@ Errors:
 --> Since SystemJS doesn't know Barrels without index, missing the /index is one of the reasons to cause this error
 
 
+
+BRAINSTORMING Folders:
+
+Folder-Structure:
+We use the default of app as Root
+- On the root, we use only the bare minimum, meaning the mainand the app.xx-objects
+
+-- core contains the static stuff we use globally on the whole application
+--- infrastructure contains static stuff, like extensions, probably self-made typings etc.
+--- services contains the everywhere used services. they're instantiated on the app-level, so they're literal singletons, thus should never contain an state
+
+-- shared
+--- services contains the services used by more than one feature. this services should get injected on each feature using them, thus they can contain states used for the specific-context
+
+
+--> Each feature has also its own shared-folder, containing the services and models. To be verified, if thats working. The current reason for this approach is the use of barrels to export an area.
+
+
+--> Every level has its index.ts. The exported data should be considered as useful on higher levels using it. The exports should be cascading, and every level should have one abstraction higher.
+Example:
+Interested in the whole feature
+--> Import feature/index
+
+Interested in one part of the feature
+--> Import feature/part/index
+
+Interested in the model of the feature
+--> Import feature/shared/models/index
+
+and so on...
+
+
+--> Since the feature should really only export the component itself, we just export this one?
+
+
+
+-- Lets try to give the imports a consistend naming aka
+feature1 --> whole feature
+feature1Services --> Services
+sharedServices, etc. etc.
+
+
+--> If we're on the same level, we emit the prefix, thus feature1-Service imports the feature1models via "models"
