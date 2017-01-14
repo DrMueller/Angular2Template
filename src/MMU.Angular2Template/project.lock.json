@@ -3,6 +3,36 @@
   "version": 2,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
+      "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "1.1.0-alpha1-22144",
+          "Microsoft.Extensions.Options": "1.1.0-alpha1-22144"
+        },
+        "compile": {
+          "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll": {}
+        }
+      },
+      "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1": {
+        "type": "package",
+        "dependencies": {
+          "Gray.Microsoft.AspNetCore.SignalR.Messaging": "0.2.0",
+          "Microsoft.AspNetCore.DataProtection": "1.1.0-alpha1-22144",
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.0-alpha1-22144",
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.0-alpha1-22144",
+          "Microsoft.Extensions.DependencyModel": "1.0.1-beta-003206",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Server.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -2061,6 +2091,28 @@
     }
   },
   "libraries": {
+    "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0": {
+      "sha512": "f6ADNhKb2bJEIOL8kCR9ypGfKjiUa21KtIAa2mM2zjDNbddBgLRYE5k05aqTB7KqivFwp1MqhrJwiMrGsqNF8w==",
+      "type": "package",
+      "path": "Gray.Microsoft.AspNetCore.SignalR.Messaging/0.2.0",
+      "files": [
+        "Gray.Microsoft.AspNetCore.SignalR.Messaging.0.2.0.nupkg.sha512",
+        "Gray.Microsoft.AspNetCore.SignalR.Messaging.nuspec",
+        "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll",
+        "lib/netstandard1.3/Gray.Microsoft.AspNetCore.SignalR.Messaging.dll"
+      ]
+    },
+    "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1": {
+      "sha512": "MyB2gibCua7nxjFaP+PHO/LdgV4xkJRtDFKrN5MNOcycky9yhCG3JtxFbm3UFpo/24GEmrmSgzC0pxIIwr3MVg==",
+      "type": "package",
+      "path": "Gray.Microsoft.AspNetCore.SignalR.Server/0.2.0-alpha1",
+      "files": [
+        "gray.microsoft.aspnetcore.signalr.server.0.2.0-alpha1.nupkg.sha512",
+        "gray.microsoft.aspnetcore.signalr.server.nuspec",
+        "lib/net451/Gray.Microsoft.AspNetCore.SignalR.Server.dll",
+        "lib/netstandard1.6/Gray.Microsoft.AspNetCore.SignalR.Server.dll"
+      ]
+    },
     "Libuv/1.9.0": {
       "sha512": "9Q7AaqtQhS8JDSIvRBt6ODSLWDBI4c8YxNxyCQemWebBFUtBbc6M5Vi5Gz1ZyIUlTW3rZK9bIr5gnVyv0z7a2Q==",
       "type": "package",
@@ -6397,6 +6449,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "Gray.Microsoft.AspNetCore.SignalR.Server >= 0.2.0-alpha1",
       "Microsoft.AspNetCore.Diagnostics >= 1.0.0",
       "Microsoft.AspNetCore.Mvc >= 1.1.0",
       "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0",

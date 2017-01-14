@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Styles -->
         <LINK href="styles/bootstrap.css" rel="stylesheet" type="text/css">
 
         <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -14,6 +13,7 @@
         <script src="node_modules/systemjs/dist/system.src.js"></script>
 
         <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/ms-signalr/jquery.signalR.js"></script>
 
         <!-- 2. Configure SystemJS -->
         <script src="systemjs.config.js"></script>
@@ -23,11 +23,9 @@
                 console.error(err);
             });
         </script>
-
     </head>
     <body>
         <app>Loading...</app>
-        <!-- Bootstrap core JavaScript Placed at the end of the document so the pages load faster -->
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
     </body>

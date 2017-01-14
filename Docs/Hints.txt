@@ -1,5 +1,8 @@
 Packages:
-RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12
+-RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12
+-Jquery-SignalR has also a bug
+--> Fix: https://github.com/alextkachuk/SignalR/commit/297a3c269f423e31c678d92d4384de4a65d6cc0f
+--> Discussion: https://github.com/SignalR/SignalR/issues/3710 
 
 Barrels:
 SystemJS doesnt seem to recognize index.ts by default, so we currently add it everywhere, or we need to keep track of all index.ts in the systemjs-config
@@ -42,6 +45,17 @@ and so on...
 
 
 --> Since the feature should really only export the component itself, we just export this one?
+
+Style-Guide Brainstorming:
+- Every Components consists a html, ts and less file
+- Every Feature (direct Folder under the app one) has it's own module, routing and barrel (index.ts)
+- Every Sub-Feature has it's own barrel
+- Every folder and file-name in the app-section is writtien in lower case
+- instead of camel case, - can be used for better readability
+- Observables only in Services, otherwise Promises (According to Ward Bell), except if a stream is in fact needed
+
+Routing:
+- The most specific Routes should always come before the more general ones
 
 
 
