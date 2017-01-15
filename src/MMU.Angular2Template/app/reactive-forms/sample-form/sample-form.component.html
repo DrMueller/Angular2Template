@@ -1,0 +1,88 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Test-Form!
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal"
+              (ngSubmit)="save()"
+              [formGroup]="customerForm"
+              novalidate>
+            <fieldset>
+                <div class="form-group" [class.has-error]="!customerForm.get('firstNameControl').valid">
+                    <label class="col-md-2 control-label" for="firstNameId">First Name</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="firstNameId"
+                               type="text"
+                               placeholder="First Name (required)"
+                               formControlName="firstNameControl" />
+                        <span class="help-block" *ngIf="firstNameControlValidationMessage">
+                            {{ firstNameControlValidationMessage }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" [class.has-error]="!customerForm.get('middleNameControl').valid">
+                    <label class="col-md-2 control-label" for="middleNameId">Middle Name</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="middleNameId"
+                               type="text"
+                               placeholder="Middle Name (disabled)"
+                               formControlName="middleNameControl" />
+                        <span class="help-block" *ngIf="middleNameControlValidationMessage">
+                            {{ middleNameControlValidationMessage }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" [class.has-error]="!customerForm.get('emailControl').valid">
+                    <label class="col-md-2 control-label" for="emailId">E-Mail</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="emailId"
+                               type="text"
+                               placeholder="E-Mail"
+                               formControlName="emailControl" />
+
+                        <span class="help-block" *ngIf="emailControlValidationMessage">
+                            {{ emailControlValidationMessage }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="disabledValueId">Disabled value</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="disabledValueId"
+                               type="text"
+                               formControlName="disabledControl" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2">
+                        <span>
+                            <button class="btn btn-primary" type="submit" [disabled]="!customerForm.valid">Save</button>
+                        </span>
+                        <span>
+                            <button class="btn btn-default" type="button" (click)="setValueFromComponent()">Set Data</button>
+                        </span>
+                        <span>
+                            <button class="btn btn-default" type="button" (click)="patchValueFromComponent()">Patch Data</button>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    
+    <div class="panel-footer">Panel footer</div>
+</div>
+
+<br/>Dirty: {{ customerForm.dirty }}
+<br/>Touched: {{ customerForm.touched }}
+<br/>Valid: {{ customerForm.valid }}
+<br/>Value: {{ customerForm.value | json }}
