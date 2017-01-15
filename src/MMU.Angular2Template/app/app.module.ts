@@ -1,5 +1,6 @@
 ﻿import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { TabsModule, TabsetConfig, TabsetComponent } from "ng2-bootstrap";
 
 import { AppComponent } from "./app.component";
 import { routing, appRoutingProviders } from "./app.routing";
@@ -17,14 +18,17 @@ import * as coreServices from "./core/services/index";
         routing,
         Feature1Module,
         SignalrFeatureModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        TabsModule
     ],
     declarations: [
         AppComponent
     ],
     providers: [
         appRoutingProviders,
-        { provide: coreServices.WindowWrapperService, useValue: window }
+        { provide: coreServices.WindowWrapperService, useValue: window },
+        TabsetConfig,
+        TabsetComponent
     ],
     bootstrap: [AppComponent]
 })

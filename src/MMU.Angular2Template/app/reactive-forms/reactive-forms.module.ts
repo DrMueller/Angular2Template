@@ -4,7 +4,6 @@ import { ReactiveFormsModule as ngRxForms, FormBuilder } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
 import { reactiveFormsRouting } from "./reactive-forms.routing";
-
 import { SampleFormComponent } from "./sample-form/index";
 import { ReactiveFormsComponent } from "./reactive-forms.component"; 
 

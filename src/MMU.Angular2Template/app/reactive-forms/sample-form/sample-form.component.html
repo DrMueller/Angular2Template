@@ -45,7 +45,7 @@
                                type="text"
                                placeholder="E-Mail"
                                formControlName="emailControl" />
-
+                        
                         <span class="help-block" *ngIf="emailControlValidationMessage">
                             {{ emailControlValidationMessage }}
                         </span>
@@ -81,6 +81,7 @@
     
     <div class="panel-footer">Panel footer</div>
 </div>
+
 
 <br/>Dirty: {{ customerForm.dirty }}
 <br/>Touched: {{ customerForm.touched }}

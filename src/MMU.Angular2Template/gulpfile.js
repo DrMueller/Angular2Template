@@ -9,6 +9,7 @@ gulp.task("clean",
             .pipe(clean());
     });
 
+
 // Node Modules --> nm
 gulp.task("nm",
     () => {
@@ -21,7 +22,8 @@ gulp.task("nm",
             "@angular/**",
             "jquery/dist/jquery.*js",
             "bootstrap/dist/js/bootstrap.*js",
-            "ms-signalr/jquery.signalR.js"
+            "ms-signalr/jquery.signalR.js",
+            "ng2-bootstrap/**"
         ],
         {
             cwd: "node_modules/**"
@@ -31,12 +33,31 @@ gulp.task("nm",
 
 // TypeScript --> ts
 var ts = require("gulp-typescript");
-var tsProject = ts.createProject("tsconfig.json");
+
+var tsProject = ts.createProject('tsconfig.json', {
+    typescript: require('typescript')
+});
+
+// new gulp-typescript 3 syndication
 gulp.task("ts",
     function () {
-        return tsProject.src()
-            .pipe(ts(tsProject))
-            .js.pipe(gulp.dest("wwwroot/app"));
+        var tsResult = tsProject.src().pipe(tsProject());
+        return tsResult.js.pipe(gulp.dest("wwwroot/app"));
+
+        //return pipe(tsProject.src())
+        //    .pipe(ts(tsProject))
+        //    .js.pipe(gulp.dest("wwwroot/app"));
+    });
+
+// fonts
+gulp.task("fonts",
+    function () {
+        var files = [
+            "./node_modules/bootstrap/fonts/**.*"
+        ];
+        return gulp.src(files)
+            .pipe(gulp.dest("./wwwroot/fonts"));
+
     });
 
 // less
@@ -79,7 +100,10 @@ gulp.task("html",
 
     });
 
-gulp.task("init", ["html", "less", "ts", "nm"]);
+
+
+
+gulp.task("init", ["html", "less", "ts", "nm", "fonts"]);
 
 gulp.task("watch", ["watch.ts", "watch.html", "watch.less"]);
 

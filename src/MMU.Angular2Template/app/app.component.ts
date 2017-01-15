@@ -8,5 +8,4 @@ import "./core/infrastructure/rxjs-extensions";
     styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-    title = "Template-App";
 }

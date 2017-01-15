@@ -1,10 +1,22 @@
 Packages:
 -RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12
--Jquery-SignalR has also a bug
+-JQuery-SignalR Bug "Load is not a function"
 --> Fix: https://github.com/alextkachuk/SignalR/commit/297a3c269f423e31c678d92d4384de4a65d6cc0f
 --> Discussion: https://github.com/SignalR/SignalR/issues/3710 
+--> Folders and PATH: https://github.com/Microsoft/TypeScript/issues/2068
 
-TypeScript on VS 2015: http://stackoverflow.com/questions/32277413/146-errors-typescript-feature-1-5-current-language-level-is-1-4
+JQuery-SignalR Bug "url.indexOf is not a function"
+--> Issue: https://github.com/SignalR/SignalR/issues/3710 
+--> Exact fix: https://github.com/SignalR/SignalR/issues/3646
+--> TLDR:	1. Go to "\node_modules\ms-signalr"
+			2. Open JQuery.signalrR.Js 
+			2. Replace "_pageWindow.load(function () { _pageLoaded = true; });" with "_pageWindow.on('load', function () { _pageLoaded = true; });"
+
+TypeScript on VS 2015: 
+http://stackoverflow.com/questions/32277413/146-errors-typescript-feature-1-5-current-language-level-is-1-4
+Versin check: http://stackoverflow.com/questions/23948348/where-can-i-find-the-typescript-version-installed-in-visual-studio 
+Issue: https://github.com/Microsoft/TypeScript/issues/2068
+--> Change PATH-Variable
 
 Barrels:
 SystemJS doesnt seem to recognize index.ts by default, so we currently add it everywhere, or we need to keep track of all index.ts in the systemjs-config

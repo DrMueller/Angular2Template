@@ -2090,9 +2090,6 @@
         "runtime": {
           "lib/net46/System.Xml.XPath.XDocument.dll": {}
         }
-      },
-      "Typescript.Compiler/2.0.0": {
-        "type": "package"
       }
     }
   },
@@ -6485,37 +6482,6 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
       ]
-    },
-    "Typescript.Compiler/2.0.0": {
-      "sha512": "JEJZI/p6l0naqSY0S8fKk2PBnuuVa0hfnwvfaRpOXGJMiBkhuRFjmaEezU5h7cio42hqdV3eYSTRHf2/58bkmw==",
-      "type": "package",
-      "path": "Typescript.Compiler/2.0.0",
-      "files": [
-        "tools/CopyrightNotice.txt",
-        "tools/License.htm",
-        "tools/License.txt",
-        "tools/cs/diagnosticMessages.generated.json",
-        "tools/de/diagnosticMessages.generated.json",
-        "tools/en/diagnosticMessages.generated.json",
-        "tools/es/diagnosticMessages.generated.json",
-        "tools/fr/diagnosticMessages.generated.json",
-        "tools/it/diagnosticMessages.generated.json",
-        "tools/ja/diagnosticMessages.generated.json",
-        "tools/ko/diagnosticMessages.generated.json",
-        "tools/lib.d.ts",
-        "tools/pl/diagnosticMessages.generated.json",
-        "tools/pt-BR/diagnosticMessages.generated.json",
-        "tools/ru/diagnosticMessages.generated.json",
-        "tools/tr/diagnosticMessages.generated.json",
-        "tools/tsc.exe",
-        "tools/tsc.js",
-        "tools/tschost.dll",
-        "tools/typescript.js",
-        "tools/zh-CN/diagnosticMessages.generated.json",
-        "tools/zh-TW/diagnosticMessages.generated.json",
-        "typescript.compiler.2.0.0.nupkg.sha512",
-        "typescript.compiler.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -6534,8 +6500,7 @@
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 1.1.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.1.0",
-      "Microsoft.TypeScript.Compiler >= 2.1.5",
-      "Typescript.Compiler >= 2.0.0"
+      "Microsoft.TypeScript.Compiler >= 2.1.5"
     ],
     ".NETFramework,Version=v4.6.1": []
   },

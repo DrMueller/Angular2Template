@@ -13,20 +13,34 @@
             </div>
 
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a routerLink="feature1" routerLinkActive="active">Feature1</a>
-                    </li>
-                    <li class="active">
-                        <a routerLink="signalrfeature" routerLinkActive="active">Signalr!</a>
-                    </li>
-                    <li class="active">
-                        <a routerLink="reactiveForms" routerLinkActive="active">Reactive-Forms</a>
-                    </li>
-                </ul>
+                <tabset>
+                    <tab>
+                        <template tabHeading>
+                            <i class="glyphicon glyphicon-bell"></i>
+                            <a routerLink="feature1" routerLinkActive="active">Basic-Stuff</a>
+                        </template>
+                    </tab>
+
+                    <tab>
+                        <template tabHeading>
+                            <i class="glyphicon glyphicon-film"></i>
+                            <a routerLink="signalrfeature" routerLinkActive="active">SignalR</a>
+                        </template>
+                    </tab>
+
+                    <tab>
+                        <template tabHeading>
+                            <i class="glyphicon glyphicon-credit-card"></i>
+                            <a routerLink="reactiveForms" routerLinkActive="active">Reactive-Forms</a>
+                        </template>
+                    </tab>
+                </tabset>
             </div>
         </div>
     </nav>
+    
+
+
 
     <div class="jumbotron">
         <router-outlet></router-outlet>
