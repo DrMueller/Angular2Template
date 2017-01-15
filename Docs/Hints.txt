@@ -4,6 +4,8 @@ Packages:
 --> Fix: https://github.com/alextkachuk/SignalR/commit/297a3c269f423e31c678d92d4384de4a65d6cc0f
 --> Discussion: https://github.com/SignalR/SignalR/issues/3710 
 
+TypeScript on VS 2015: http://stackoverflow.com/questions/32277413/146-errors-typescript-feature-1-5-current-language-level-is-1-4
+
 Barrels:
 SystemJS doesnt seem to recognize index.ts by default, so we currently add it everywhere, or we need to keep track of all index.ts in the systemjs-config
 

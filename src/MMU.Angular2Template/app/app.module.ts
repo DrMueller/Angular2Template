@@ -6,6 +6,7 @@ import { routing, appRoutingProviders } from "./app.routing";
 
 import { Feature1Module } from "./feature1/index"; 
 import { SignalrFeatureModule } from "./signalr-feature/index";
+import { ReactiveFormsModule } from "./reactive-forms/index";
 
 import * as coreServices from "./core/services/index";
 
@@ -15,7 +16,8 @@ import * as coreServices from "./core/services/index";
         BrowserModule,
         routing,
         Feature1Module,
-        SignalrFeatureModule
+        SignalrFeatureModule,
+        ReactiveFormsModule
     ],
     declarations: [
         AppComponent
