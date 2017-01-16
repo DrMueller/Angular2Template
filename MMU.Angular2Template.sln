@@ -14,8 +14,10 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MMU.Angular2Template", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{635047D1-B5A4-4B47-A9AE-0C4D27A0413F}"
 	ProjectSection(SolutionItems) = preProject
+		Docs\FilestructureAndNaming.md = Docs\FilestructureAndNaming.md
 		Docs\Hints.txt = Docs\Hints.txt
-		Docs\Links.txt = Docs\Links.txt
+		Docs\KnownIssues.md = Docs\KnownIssues.md
+		Docs\Links.md = Docs\Links.md
 		Docs\Todos.txt = Docs\Todos.txt
 	EndProjectSection
 EndProject
