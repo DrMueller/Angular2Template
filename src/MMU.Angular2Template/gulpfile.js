@@ -38,15 +38,11 @@ var tsProject = ts.createProject('tsconfig.json', {
     typescript: require('typescript')
 });
 
-// new gulp-typescript 3 syndication
+// new gulp-typescript 3 syntax
 gulp.task("ts",
     function () {
         var tsResult = tsProject.src().pipe(tsProject());
         return tsResult.js.pipe(gulp.dest("wwwroot/app"));
-
-        //return pipe(tsProject.src())
-        //    .pipe(ts(tsProject))
-        //    .js.pipe(gulp.dest("wwwroot/app"));
     });
 
 // fonts
