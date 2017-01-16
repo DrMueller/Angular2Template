@@ -12,5 +12,5 @@ https://valor-software.com/ng2-bootstrap/#/buttons
 
 
 # Gulp Tasks
-## Gulp-Typescript:
+## Gulp-Typescript
 https://github.com/ivogabe/gulp-typescript 

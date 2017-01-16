@@ -1,10 +1,12 @@
 # External library-bugs
 ## RxJs
-RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12
+RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12.
 
 ## SignalR
 ### "Load is not a function"
+
 Fix: https://github.com/alextkachuk/SignalR/commit/297a3c269f423e31c678d92d4384de4a65d6cc0f
+
 Discussion: https://github.com/SignalR/SignalR/issues/3710 
 
 ### "url.indexOf is not a function"
@@ -13,7 +15,14 @@ Exact fix: https://github.com/SignalR/SignalR/issues/3646
 TLDR:	
 1. Go to "\node_modules\ms-signalr"
 2. Open JQuery.signalrR.Js 
-3. Replace "_pageWindow.load(function () { _pageLoaded = true; });" with "_pageWindow.on('load', function () { _pageLoaded = true; });"
+3. Replace 
+```javascript
+_pageWindow.load(function () { _pageLoaded = true; });
+```
+with 
+```javascript
+_pageWindow.on('load', function () { _pageLoaded = true; });
+```
 
 
 ## SystemJS
