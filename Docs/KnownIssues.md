@@ -11,10 +11,13 @@ Discussion: https://github.com/SignalR/SignalR/issues/3710
 
 ### "url.indexOf is not a function"
 Issue: https://github.com/SignalR/SignalR/issues/3710
+
 Exact fix: https://github.com/SignalR/SignalR/issues/3646
-TLDR:	
+
+TLDR:
+
 1. Go to "\node_modules\ms-signalr"
-2. Open JQuery.signalrR.Js 
+2. Open JQuery.signalrR.Js<br />
 3. Replace 
 ```javascript
 _pageWindow.load(function () { _pageLoaded = true; });
