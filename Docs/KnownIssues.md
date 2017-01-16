@@ -25,7 +25,7 @@ _pageWindow.on('load', function () { _pageLoaded = true; });
 
 ## SystemJS
 ## index.ts
-SystemJS doesn't recognize files named index.ts as default-barrel export. It can be configured, but that would mean, that every created index-file has to be added on the SystemJS-configuration.
+SystemJS doesn't recognize files named index.ts as default-barrel export. It can be configured, but that would mean, that every created index-file has to be added on the SystemJS-configuration. <br />
 At the moment, we just use the /index-suffix.
 
 ## Unexpected token <
@@ -37,9 +37,9 @@ Since SystemJS doesn't know Barrels without index, missing the /indexon an impor
 There are several possibilites to work with TypeScript: It's dependency can get obtained via NuGet, global installation or NuGet.
 
 ## Gulp
-The gulp-typescript compilers mostly use the latest stable build. The module can be specified manually in order to assure the local typescript-version is taken.
+The gulp-typescript compilers mostly use the latest stable build. The module can be specified manually in order to assure the local typescript-version is taken. <br />
 See the gulpfile for an example.
 
 ## VS 2015
-There is a bug, which leaves the PATH-Variable on the older TS-Version. This needs to be changed manually.
+There is a bug, which leaves the PATH-Variable on the older TS-Version. This needs to be changed manually. <br />
 Interesting enough, the VS2015-Window shows a different TS-version than the tsc-v command.
