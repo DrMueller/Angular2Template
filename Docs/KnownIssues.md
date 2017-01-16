@@ -6,10 +6,11 @@ RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12.
 ### "Load is not a function"
 
 Fix: https://github.com/alextkachuk/SignalR/commit/297a3c269f423e31c678d92d4384de4a65d6cc0f
+
 Discussion: https://github.com/SignalR/SignalR/issues/3710 
 
 ### "url.indexOf is not a function"
-Issue: https://github.com/SignalR/SignalR/issues/3710 
+Issue: https://github.com/SignalR/SignalR/issues/3710
 Exact fix: https://github.com/SignalR/SignalR/issues/3646
 TLDR:	
 1. Go to "\node_modules\ms-signalr"
