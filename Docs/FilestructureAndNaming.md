@@ -1,6 +1,6 @@
 # Structure
 
-## core
+## app core-folder
 ### General
 The core-folder on the app-level contains technical assets and means. Examples: <br />
 + Globally avaliable imports
@@ -8,20 +8,20 @@ The core-folder on the app-level contains technical assets and means. Examples: 
 
 If the types are injected, they should be defined on the app-level, thus should be threated as literal *singletons* and never contain states.
 
-## features
+## app features-folders
 ### General
 + Every functional-feature has its own folder directly under *app*.
 + Every functional-feature has its own module, routing and a main-component.
 + Every functional-feature shoudl only export its module (see barrels-topic).
 
-## shared-folder
+## app shared-folder
 ### General
 The shared-folder on the app-level contains features, which are used on several functional- or non-functional features. <br />
 They should be injected on each feature and not on the app-level in order to assure every feature has its instance. <br />
 The shared-feature barrel should contain all the exports to make it possible to use this feature. For example: All services, modules, enums etc. should be exported, if they can be used form the outs. <br />
 
 
-# barrels
+# Barrels
 ## General
 Every level has its barrels, which means every folder has one except some super-general folders like *Core* and *shared*. <br/>
 Every barrel should export the types on its level and also every barrel from the lower ones. This allows a proper abstraction depending on the level the import-client is interested in.
@@ -37,7 +37,7 @@ This leads to some general conclusions:
 __Random-thoughts__:Since the types in the core- and shared-folders fullfil a different requirement, we might split the barrel-rules for functional- and non-functional features.
 
 
-# imports
+# Imports
 + In order to make the aliases consistent, we try this convention: <br/>
 + feature1 --> whole feature
 + feature1Services --> all servies of this feature
