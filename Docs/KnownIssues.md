@@ -10,12 +10,9 @@ Fix: https://github.com/alextkachuk/SignalR/commit/297a3c269f423e31c678d92d4384d
 Discussion: https://github.com/SignalR/SignalR/issues/3710 
 
 ### "url.indexOf is not a function"
-Issue: https://github.com/SignalR/SignalR/issues/3710
-
-Exact fix: https://github.com/SignalR/SignalR/issues/3646
-
-TLDR:
-
+Issue: https://github.com/SignalR/SignalR/issues/3710 <br />
+Exact fix: https://github.com/SignalR/SignalR/issues/3646 <br />
+TLDR: <br />
 1. Go to "\node_modules\ms-signalr"
 2. Open JQuery.signalrR.Js<br />
 3. Replace 
