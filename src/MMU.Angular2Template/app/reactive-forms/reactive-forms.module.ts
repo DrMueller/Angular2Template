@@ -1,25 +1,37 @@
-﻿import { NgModule } from "@angular/core";
+﻿// External
+import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule as ngRxForms, FormBuilder } from "@angular/forms";
-import { HttpModule } from "@angular/http";
+import { AlertModule, DropdownModule, ProgressbarModule, TabsModule } from "ng2-bootstrap";
 
+// Shared
+import { ValidatedFormBuilderService } from "app/shared/form-validation/index";
+
+// Feature
 import { reactiveFormsRouting } from "./reactive-forms.routing";
-import { SampleFormComponent } from "./sample-form/index";
 import { ReactiveFormsComponent } from "./reactive-forms.component"; 
+
+// Feature-Parts
+import { SampleFormComponent } from "./sample-form/index";
+import { GenericValidationComponent } from "./generic-validation/index";
 
 @NgModule({
     imports: [
         CommonModule,
         ngRxForms,
-        HttpModule,
-        reactiveFormsRouting
+        reactiveFormsRouting,
+        AlertModule.forRoot(),
+        ProgressbarModule.forRoot(),
+        TabsModule
     ],
     declarations: [
         SampleFormComponent,
-        ReactiveFormsComponent
+        ReactiveFormsComponent,
+        GenericValidationComponent
     ],
     providers: [
-        FormBuilder
+        FormBuilder,
+        ValidatedFormBuilderService
     ]
 })
 

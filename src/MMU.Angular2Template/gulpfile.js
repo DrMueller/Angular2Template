@@ -9,7 +9,6 @@ gulp.task("clean",
             .pipe(clean());
     });
 
-
 // Node Modules --> nm
 gulp.task("nm",
     () => {
@@ -53,28 +52,6 @@ gulp.task("fonts",
         ];
         return gulp.src(files)
             .pipe(gulp.dest("./wwwroot/fonts"));
-
-    });
-
-// less
-var less = require("gulp-less");
-gulp.task("less",
-    function () {
-        var appFiles = [
-            "./app/**/*.less"
-        ];
-
-        var rootFiles = [
-            "./node_modules/bootstrap/less/bootstrap.less"
-            //"./node_modules/font-awesome/less/font-awesome.less"
-        ];
-
-        return gulp.src(appFiles)
-            .pipe(less())
-            .pipe(gulp.dest("./wwwroot/app")) &&
-            gulp.src(rootFiles)
-            .pipe(less())
-            .pipe(gulp.dest("./wwwroot/styles"));
     });
 
 // html
@@ -93,32 +70,78 @@ gulp.task("html",
             .pipe(gulp.dest("./wwwroot/app")) &&
             gulp.src(rootFiles)
             .pipe(gulp.dest("./wwwroot"));
-
     });
 
+// sass
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+gulp.task('sass', function () {
+    var appFiles = [
+        "./app/**/*.scss"
+    ];
 
+    var rootFiles = [
+        "./node_modules/bootstrap/scss/**.scss"
+    ];
 
+    return gulp.src(appFiles)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest("./wwwroot/app")) &&
+        gulp.src(rootFiles)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest("./wwwroot/styles"));
 
-gulp.task("init", ["html", "less", "ts", "nm", "fonts"]);
+    //return gulp.src(appFiles)
+    //        .pipe(sass().on('error', sass.logError))
+    //        .pipe(gulp.dest("./wwwroot/app")) &&
+    //        gulp.src(rootFiles)
+    //        .pipe(sass().on('error', sass.logError))
+    //        .pipe(gulp.dest("./wwwroot/styles"));
+});
 
-gulp.task("watch", ["watch.ts", "watch.html", "watch.less"]);
+// less
+var less = require("gulp-less");
+gulp.task("less",
+    function () {
+        var appFiles = [
+            "./app/**/*.less"
+        ];
 
-        gulp.task("watch.ts",
-            ["ts"],
-            function () {
-                return gulp.watch("app/**/*.ts", ["ts"]);
-            });
+        var rootFiles = [
+            "./node_modules/bootstrap/less/bootstrap.less"
+        ];
 
-        gulp.task("watch.html",
-            ["html"],
-            function () {
-                return gulp.watch("app/**/*.html", ["html"]);
-            });
+        return gulp.src(appFiles)
+            .pipe(less())
+            .pipe(gulp.dest("./wwwroot/app")) &&
+            gulp.src(rootFiles)
+            .pipe(less())
+            .pipe(gulp.dest("./wwwroot/styles"));
+    });
 
-        gulp.task("watch.less",
-            ["less"],
-            function () {
-                return gulp.watch("app/**/*.less", ["less"]);
-            });
+gulp.task("init", ["html", "less", "ts", "nm", "fonts", "sass", "less"]);
+gulp.task("watch", ["watch.ts", "watch.html", "watch.less", "watch.sass"]);
+
+gulp.task("watch.ts",
+    ["ts"],
+    function () {
+        return gulp.watch("app/**/*.ts", ["ts"]);
+    });
+
+gulp.task("watch.html",
+    ["html"],
+    function () {
+        return gulp.watch("app/**/*.html", ["html"]);
+    });
+
+gulp.task('watch.sass', function () {
+    gulp.watch("./app/**/*.scss", ["sass"]);
+});
+
+gulp.task("watch.less",
+    ["less"],
+    function () {
+        return gulp.watch("app/**/*.less", ["less"]);
+    });
 
 gulp.task("default", ["nm", "watch"]);

@@ -1,5 +1,4 @@
-﻿
-<div class="panel panel-primary">
+﻿<div class="panel panel-primary">
     <div class="panel-heading">
         Test-Form!
     </div>
@@ -22,6 +21,7 @@
                         </span>
                     </div>
                 </div>
+
 
                 <div class="form-group" [class.has-error]="!customerForm.get('middleNameControl').valid">
                     <label class="col-md-2 control-label" for="middleNameId">Middle Name</label>
@@ -49,6 +49,7 @@
                         <span class="help-block" *ngIf="emailControlValidationMessage">
                             {{ emailControlValidationMessage }}
                         </span>
+
                     </div>
                 </div>
 
@@ -65,7 +66,7 @@
                 <div class="form-group">
                     <div class="col-md-offset-2">
                         <span>
-                            <button class="btn btn-primary" type="submit" [disabled]="!customerForm.valid">Save</button>
+                            <button class="btn btn-primary" type="submit" (click)="save()" [disabled]="!customerForm.valid">Save</button>
                         </span>
                         <span>
                             <button class="btn btn-default" type="button" (click)="setValueFromComponent()">Set Data</button>
@@ -81,7 +82,6 @@
     
     <div class="panel-footer">Panel footer</div>
 </div>
-
 
 <br/>Dirty: {{ customerForm.dirty }}
 <br/>Touched: {{ customerForm.touched }}

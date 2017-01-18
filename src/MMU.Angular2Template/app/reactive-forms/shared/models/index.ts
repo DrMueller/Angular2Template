@@ -1,2 +1,2 @@
 ﻿export * from "./customer.model";
-export * from "./validation-affiliation.model";
+export * from "./individual.model";

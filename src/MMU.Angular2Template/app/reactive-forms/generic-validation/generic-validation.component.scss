@@ -1,0 +1,16 @@
+﻿$primaryPadding: 15px;
+
+.row-main-part {
+    clear: both;
+    margin-top: 30px;
+    display: block;
+}
+
+.btn-fullload-component {
+    margin-right: 10px;
+}
+
+.block-main-part{
+    padding-left: $primaryPadding;
+    padding-right: $primaryPadding;
+}

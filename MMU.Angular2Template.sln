@@ -15,7 +15,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{635047D1-B5A4-4B47-A9AE-0C4D27A0413F}"
 	ProjectSection(SolutionItems) = preProject
 		Docs\FilestructureAndNaming.md = Docs\FilestructureAndNaming.md
-		Docs\Hints.txt = Docs\Hints.txt
 		Docs\KnownIssues.md = Docs\KnownIssues.md
 		Docs\Links.md = Docs\Links.md
 		Docs\Todos.txt = Docs\Todos.txt

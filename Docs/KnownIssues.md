@@ -1,4 +1,16 @@
 # External library-bugs
+## Bootstrap
+### Version 4 - Sass
+Currently nothing working really. But the switch to sass is easy and already prepared via gulp-tasks.
+
+## Ng2-Bootstrap
+### 'xx' is not a known element
+Some of these Controls are not currently supported in ReactiveForms, thus need the [(ngModel)] to work properly.
+THey're currently updating, so you might want to check the Issues on GitHub.
+
+### Imports
+For Some reason, it seems like we have to import the Modules on each module individually, not just on the root one.
+
 ## RxJs
 RxJs seems to have a Bug in the newer version, so we leave it at 5.0.0-beta.12.
 
@@ -21,15 +33,14 @@ with
 ```javascript
 _pageWindow.on('load', function () { _pageLoaded = true; });
 ```
-
-
 ## SystemJS
-## index.ts
+### index.ts
 SystemJS doesn't recognize files named index.ts as default-barrel export. It can be configured, but that would mean, that every created index-file has to be added on the SystemJS-configuration. <br />
 At the moment, we just use the /index-suffix.
 
-## Unexpected token <
-Since SystemJS doesn't know Barrels without index, missing the /indexon an import is one of the reasons for this error.
+### Unexpected token <
+Since SystemJS doesn't know Barrels without index, missing the */index* on an import is one of the reasons for this error.
+Generally, this means that SystemJS doesn't find the expected module.
 
 
 # TypeScript-VisualStudio 2015

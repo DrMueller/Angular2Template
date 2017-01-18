@@ -1,5 +1,4 @@
 # Structure
-
 ## app core-folder
 ### General
 The core-folder on the app-level contains technical assets and means. Examples: <br />
@@ -38,6 +37,21 @@ __Random-thoughts__:Since the types in the core- and shared-folders fullfil a di
 
 
 # Imports
+## General
+With the tsconfig-config entries:
+```javascript
+    "moduleResolution": "node",
+    "baseUrl": "." // This allows TS to resolve the modules from the app-path instead of relative to the current file
+```
+We can use the relative path from the root, which seems more clear:
+```javascript
+import { ObjectDefinitionHandler } from "app/core/handlers/index"; // cool
+import { ObjectDefinitionHandler } from "../../../core/handlers/index"; // ugly
+```
+__IMPORTANT__: We leave the baseUrl to the core-path, so the path matches with CommonJs, otherwise, we would have to start different mappings there as well.
+
+
+##Suggestions
 + In order to make the aliases consistent, we try this convention: <br/>
 + feature1 --> whole feature
 + feature1Services --> all servies of this feature

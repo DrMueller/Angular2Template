@@ -1,47 +1,17 @@
 ﻿<div class="container">
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Template-App</a>
-            </div>
-
-            <div id="navbar" class="navbar-collapse collapse">
-                <tabset>
-                    <tab>
-                        <template tabHeading>
-                            <i class="glyphicon glyphicon-bell"></i>
-                            <a routerLink="feature1" routerLinkActive="active">Basic-Stuff</a>
-                        </template>
-                    </tab>
-
-                    <tab>
-                        <template tabHeading>
-                            <i class="glyphicon glyphicon-film"></i>
-                            <a routerLink="signalrfeature" routerLinkActive="active">SignalR</a>
-                        </template>
-                    </tab>
-
-                    <tab>
-                        <template tabHeading>
-                            <i class="glyphicon glyphicon-credit-card"></i>
-                            <a routerLink="reactiveForms" routerLinkActive="active">Reactive-Forms</a>
-                        </template>
-                    </tab>
-                </tabset>
-            </div>
-        </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a routerLink="feature1" routerLinkActive="active">Basic-Stuff</a>
+            </li>
+            <li class="dropdown">
+                <a routerLink="signalrfeature" routerLinkActive="active">SignalR</a>
+            </li>
+            <li class="dropdown">
+                <a routerLink="reactiveForms" routerLinkActive="active">Reactive-Forms</a>
+            </li>
+        </ul>
     </nav>
-    
-
-
-
     <div class="jumbotron">
         <router-outlet></router-outlet>
     </div>

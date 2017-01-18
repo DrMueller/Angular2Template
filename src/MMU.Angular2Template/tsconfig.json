@@ -9,7 +9,8 @@
     "removeComments": false,
     "sourceMap": true,
     "target": "es5",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "." // This allows TS to resolve the modules from the app-path instead of relative to the current file
   },
   "exclude": [
     "node_modules",

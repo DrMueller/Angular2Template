@@ -1,1 +1,17 @@
-﻿<router-outlet></router-outlet>
+﻿<nav class="navbar navbar-default" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+        <li>
+            <a routerLink="sampleForm" routerLinkActive="active">Sample-Form</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li>
+            <a routerLink="genericValidation" routerLinkActive="active">Generic Validation</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="jumbotron">
+    <router-outlet></router-outlet>
+</div>

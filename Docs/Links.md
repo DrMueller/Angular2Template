@@ -14,3 +14,8 @@ https://valor-software.com/ng2-bootstrap/#/buttons
 # Gulp Tasks
 ## Gulp-Typescript
 https://github.com/ivogabe/gulp-typescript 
+
+
+# Typescript
+## Module-Resolution
+https://github.com/Microsoft/TypeScript/issues/5039 
