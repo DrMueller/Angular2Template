@@ -2,15 +2,13 @@
 import { Subject } from "rxjs/Subject";
 import { Observable } from "rxjs/Observable";
 
-import { ChannelConfig } from "./channel-config.model";
-import { ChannelEvent } from "./channel-event.model";
-import { ConnectionState } from "./connection-state.enum";
-import { ChannelSubject } from "./channel-subject";
+import { WindowWrapperService } from "app/core/services/index";
 
-import * as coreServices from "../../core/services/index";
+import { ChannelSubject } from "../handlers/index";
+import { ChannelConfig, ConnectionState, ChannelEvent } from "../models/index";
 
 @Injectable()
-export class ChannelService {
+export class SignalrChannelService {
     public starting$: Observable<any>;
     public connectionState$: Observable<ConnectionState>;
     public error$: Observable<string>;
@@ -23,7 +21,7 @@ export class ChannelService {
     private hubProxy: any;
     private subjects = new Array<ChannelSubject>();
 
-    public constructor(private windowWrapperService: coreServices.WindowWrapperService) {
+    public constructor(private windowWrapperService: WindowWrapperService) {
         if (windowWrapperService.$ === undefined || windowWrapperService.$.hubConnection === undefined) {
             throw new Error("The variable '$' or the .hubConnection() function are not defined...please check the SignalR scripts have been loaded properly");
         }

@@ -32,7 +32,6 @@ gulp.task("nm",
 
 // TypeScript --> ts
 var ts = require("gulp-typescript");
-
 var tsProject = ts.createProject('tsconfig.json', {
     typescript: require('typescript')
 });
@@ -40,7 +39,7 @@ var tsProject = ts.createProject('tsconfig.json', {
 // new gulp-typescript 3 syntax
 gulp.task("ts",
     function () {
-        var tsResult = tsProject.src().pipe(tsProject());
+        var tsResult = tsProject.src().pipe(tsProject(ts.reporter.fullReporter));
         return tsResult.js.pipe(gulp.dest("wwwroot/app"));
     });
 
@@ -90,13 +89,6 @@ gulp.task('sass', function () {
         gulp.src(rootFiles)
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest("./wwwroot/styles"));
-
-    //return gulp.src(appFiles)
-    //        .pipe(sass().on('error', sass.logError))
-    //        .pipe(gulp.dest("./wwwroot/app")) &&
-    //        gulp.src(rootFiles)
-    //        .pipe(sass().on('error', sass.logError))
-    //        .pipe(gulp.dest("./wwwroot/styles"));
 });
 
 // less

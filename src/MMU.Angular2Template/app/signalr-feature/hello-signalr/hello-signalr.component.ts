@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from "@angular/core";
 
-import * as signalr from "../../shared/signalr/index";
+import * as signalr from "app/shared/signalr/index";
 
 import * as services from "../shared/services/index";
 
@@ -15,7 +15,7 @@ export class SignalrTestComponent implements OnInit {
     private connectionState: string;
     private channelEvents: signalr.ChannelEvent[] = [];
 
-    public constructor(private channelService: signalr.ChannelService, private signalrTestService: services.SignalrTestService) {
+    public constructor(private channelService: signalr.SignalrChannelService, private signalrTestService: services.SignalrTestService) {
     }
 
     public ngOnInit(): void {

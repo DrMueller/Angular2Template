@@ -1,3 +1,3 @@
-﻿export * from "./controlvalidation-affiliation.model";
-export * from "./validationerrors-container.model";
-export * from "./validated-control.model";
+﻿export * from "./validation-affiliation.model";
+export * from "./validation-set.model";
+export * from "./validation-error.model";

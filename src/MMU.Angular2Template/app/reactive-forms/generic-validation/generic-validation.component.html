@@ -3,13 +3,12 @@
     <div class="panel-heading">
         Fun with validation!
     </div>
-    <!--<div class="panel-body">
+    <div class="panel-body">
         <form class="form-horizontal"
-              (ngSubmit)="save()"
-              [formGroup]="customerForm"
+              [formGroup]="individualForm"
               novalidate>
             <fieldset>
-                <div class="form-group" [class.has-error]="!customerForm.get('firstNameControl').valid">
+                <div class="form-group" [class.has-error]="brokenValidations.firstNameControl">
                     <label class="col-md-2 control-label" for="firstNameId">First Name</label>
                     <div class="col-md-8">
                         <input class="form-control"
@@ -17,14 +16,36 @@
                                type="text"
                                placeholder="First Name (required)"
                                formControlName="firstNameControl" />
-                        <span class="help-block" *ngIf="firstNameControlValidationMessage">
-                            {{ firstNameControlValidationMessage }}
-                        </span>
+                        <div class="help-block" *ngIf="brokenValidations.firstNameControl">
+                            <ul>
+                                <li *ngFor="let brokenValidation of brokenValidations.firstNameControl">
+                                    {{ brokenValidation.errorMessage }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group" [class.has-error]="brokenValidations.lastNameControl">
+                    <label class="col-md-2 control-label" for="lastNameId">Last Name</label>
+                    <div class="col-md-8">
+                        <input class="form-control"
+                               id="lastNameId"
+                               type="text"
+                               placeholder="Last Name (required)"
+                               formControlName="lastNameControl" />
+                        <div class="help-block" *ngIf="brokenValidations.lastNameControl">
+                            <ul>
+                                <li *ngFor="let brokenValidation of brokenValidations.lastNameControl">
+                                    {{ brokenValidation.errorMessage }}
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </fieldset>
         </form>
-    </div>-->
+    </div>
 
     <div class="panel-footer">Panel footer</div>
 </div>

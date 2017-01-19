@@ -23,7 +23,7 @@ import * as helloSignalr from "./hello-signalr/index";
         SignalrFeatureComponent
     ],
     providers: [
-        signalr.ChannelService,
+        signalr.SignalrChannelService,
         services.SignalrTestService
     ]
 })

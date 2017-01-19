@@ -1,2 +1,1 @@
-﻿export * from "./control-validation.service";
-export * from "./validatedform-builder.service";
+﻿export * from "./validation-dispatcher.service";

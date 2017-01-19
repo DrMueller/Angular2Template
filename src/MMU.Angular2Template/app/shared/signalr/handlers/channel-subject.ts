@@ -1,4 +1,4 @@
-﻿import { ChannelEvent } from "./channel-event.model";
+﻿import { ChannelEvent } from "../models/index";
 import { Subject } from "rxjs/Subject";
 
 export class ChannelSubject {
