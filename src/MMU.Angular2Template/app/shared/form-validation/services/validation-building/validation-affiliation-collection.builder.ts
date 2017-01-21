@@ -4,7 +4,7 @@ import { ValidationAffiliationBuilder } from "./index";
 export class ValidationAffiliationCollectionBuilder {
     private readonly validationAffiliations = new ValidationAffiliationCollection();
 
-    public startBuldingAffiliation(controlName: string): ValidationAffiliationBuilder {
+    public startBuildingAffiliation(controlName: string): ValidationAffiliationBuilder {
         const affiliationBuilder = new ValidationAffiliationBuilder(this, this.validationAffiliations, controlName);
         return affiliationBuilder;
     }

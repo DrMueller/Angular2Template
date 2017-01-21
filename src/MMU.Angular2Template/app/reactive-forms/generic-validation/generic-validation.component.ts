@@ -47,32 +47,32 @@ export class GenericValidationComponent implements OnInit {
     private initializeValidationDefinition(): void {
         const validationBuilder = this.validationBuildingFactory.createBuilder();
         const validationCollection =
-            validationBuilder.
-                startBuildingAffiliation("firstNameControl")
-                    .startBuldingSet()
-                        .withRuleKey("required")
-                        .withErrorMessage("First name is required.")
-                    .buildValidationSet()
-                    .startBuldingSet()
-                        .withRuleKey("minlength")
-                        .withErrorMessage("The first name has to be at least 5 characters long.")
-                    .buildValidationSet()
-                .buildAffiliation()
-                .startBuildingAffiliation("lastNameControl")
-                    .startBuldingSet()
-                        .withRuleKey("required")
-                        .withErrorMessage("First name is required.")
-                    .buildValidationSet()
-                    .startBuldingSet()
-                        .withRuleKey("minlength")
-                        .withErrorMessage("The last name has to be at least 10 characters long.")
-                    .buildValidationSet()
-                    .startBuldingSet()
-                        .withRuleKey("maxlength")
-                        .withErrorMessage("The last name has to be less than 3 characters long.")
-                    .buildValidationSet()
-                .buildAffiliation()
-            .buildCollection();
+        validationBuilder.
+            startBuildingAffiliation("firstNameControl")
+                .startBuldingSet()
+                    .withRuleKey("required")
+                    .withErrorMessage("First name is required.")
+                .buildValidationSet()
+                .startBuldingSet()
+                    .withRuleKey("minlength")
+                    .withErrorMessage("The first name has to be at least 5 characters long.")
+                .buildValidationSet()
+            .buildAffiliation()
+            .startBuildingAffiliation("lastNameControl")
+                .startBuldingSet()
+                    .withRuleKey("required")
+                    .withErrorMessage("First name is required.")
+                .buildValidationSet()
+                .startBuldingSet()
+                    .withRuleKey("minlength")
+                    .withErrorMessage("The last name has to be at least 10 characters long.")
+                .buildValidationSet()
+                .startBuldingSet()
+                    .withRuleKey("maxlength")
+                    .withErrorMessage("The last name has to be less than 3 characters long.")
+                .buildValidationSet()
+            .buildAffiliation()
+        .buildCollection();
 
         this.validationDispatcher.initialize(validationCollection);
     };
