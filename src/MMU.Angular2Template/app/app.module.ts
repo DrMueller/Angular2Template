@@ -14,6 +14,7 @@ import { CoreModule } from "./core/index";
 // domain-features
 import { Feature1Module } from "./feature1/index";
 import { ReactiveFormsModule } from "./reactive-forms/index";
+import { MdTestingModule } from "./md-testing/index";
 
 @NgModule({
     imports: [
@@ -23,13 +24,14 @@ import { ReactiveFormsModule } from "./reactive-forms/index";
         ReactiveFormsModule,
         TabsModule.forRoot(),
         HttpModule,
-        CoreModule
+        CoreModule,
+        MdTestingModule
     ],
     declarations: [
         AppComponent
     ],
     providers: [
-        appRoutingProviders,
+        appRoutingProviders
     ],
     bootstrap: [AppComponent]
 })

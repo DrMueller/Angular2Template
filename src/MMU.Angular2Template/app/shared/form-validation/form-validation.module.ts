@@ -1,6 +1,7 @@
 ﻿// external
 import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
+import { NgModule, ModuleWithProviders } from "@angular/core";
+import { ReactiveFormsModule as ngRxForms, FormBuilder } from "@angular/forms";
 
 // components
 // TODO: Barrel doesn't work here for some reason, check bacck on GitHub issues
@@ -12,6 +13,7 @@ import { ValidationBuildingFactory } from "./services/index";
 
 @NgModule({
     exports: [
+        ngRxForms,
         ValidationMessageComponent
     ],
     imports: [
@@ -24,6 +26,3 @@ import { ValidationBuildingFactory } from "./services/index";
         ValidationBuildingFactory // TODO: Not good idea to provide on shared-module, check back best practices
     ]
 })
-
-export class FormValidationModule {
-}

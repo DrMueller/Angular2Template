@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from "@angular/core";
 
-import * as signalr from "app/shared/signalr/index";
+import { ChannelConfig, ChannelEvent, ConnectionState, SignalrChannelService } from "app/core/signalr/index";
 
 import * as services from "../shared/services/index";
 
@@ -10,12 +10,12 @@ import * as services from "../shared/services/index";
 })
 
 export class SignalrTestComponent implements OnInit {
-    private CHANNEL_NAME: string = "HelloSignalrTesting"; // The Channel has to be defined on the Server-Side (atm on the Controller) as well
+    private CHANNEL_NAME = "HelloSignalrTesting"; // The Channel has to be defined on the Server-Side (atm on the Controller) as well
 
     private connectionState: string;
-    private channelEvents: signalr.ChannelEvent[] = [];
+    private channelEvents: ChannelEvent[] = [];
 
-    public constructor(private channelService: signalr.SignalrChannelService, private signalrTestService: services.SignalrTestService) {
+    public constructor(private channelService: SignalrChannelService, private signalrTestService: services.SignalrTestService) {
     }
 
     public ngOnInit(): void {
@@ -30,8 +30,8 @@ export class SignalrTestComponent implements OnInit {
     private initializeChannelService(): void {
         this.channelService.connectionState$
             .subscribe(
-            (next: signalr.ConnectionState) => {
-                this.connectionState = signalr.ConnectionState[next];
+            (next: ConnectionState) => {
+                this.connectionState = ConnectionState[next];
             },
             (error: any) => {
                 console.error("errors$ error", error);
@@ -45,7 +45,7 @@ export class SignalrTestComponent implements OnInit {
 
         this.channelService.sub(this.CHANNEL_NAME)
             .subscribe(
-            (channelEvent: signalr.ChannelEvent) => {
+            (channelEvent: ChannelEvent) => {
                 this.channelEvents.push(channelEvent);
             },
             (error: any) => {

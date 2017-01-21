@@ -20,7 +20,6 @@ import * as part1 from "./part1/index";
         part1.Part1Component,
         part1List.Part1ListComponent,
         Feature1Component
-
     ],
     providers: [
         services.HelloWorldService

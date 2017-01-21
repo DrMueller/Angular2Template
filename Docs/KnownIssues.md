@@ -1,3 +1,10 @@
+#Angular 2
+## Barrel-Ordering
+Barrels need to get imported in the sequence they are used.<br />
+Example Errors:<br />
+> Can't resolve all parameters for 'xx'
+Discussion and possible fixes: http://stackoverflow.com/questions/37902476/automatic-ordering-of-exports-in-index-ts-makes-app-crash/37907696#37907696
+
 # External library-bugs
 ## Bootstrap
 ### Version 4 - Sass

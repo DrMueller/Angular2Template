@@ -3,8 +3,6 @@ import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 
-import * as signalr from "../shared/signalr/index";
-
 import { signalrFeatureRouting } from "./signalr-feature.routing";
 import { SignalrFeatureComponent } from "./signalr-feature.component";
 
@@ -23,7 +21,6 @@ import * as helloSignalr from "./hello-signalr/index";
         SignalrFeatureComponent
     ],
     providers: [
-        signalr.SignalrChannelService,
         services.SignalrTestService
     ]
 })

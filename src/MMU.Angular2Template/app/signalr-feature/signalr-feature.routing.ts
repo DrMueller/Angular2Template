@@ -3,7 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { SignalrFeatureComponent } from "./signalr-feature.component";
 
-import * as helloSignalr from "./hello-signalr/index";
+import { SignalrTestComponent } from "./hello-signalr/index";
 
 const feature1Routes: Routes = [
     {
@@ -11,7 +11,7 @@ const feature1Routes: Routes = [
         component: SignalrFeatureComponent,
         children: [
             { path: "", redirectTo: "helloSignalr", pathMatch: "full" },
-            { path: "helloSignalr", component: helloSignalr.SignalrTestComponent }
+            { path: "helloSignalr", component: SignalrTestComponent }
         ]
     }
 ];

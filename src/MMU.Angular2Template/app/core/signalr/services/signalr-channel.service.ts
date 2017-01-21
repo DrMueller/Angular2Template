@@ -2,10 +2,10 @@
 import { Subject } from "rxjs/Subject";
 import { Observable } from "rxjs/Observable";
 
-import { WindowWrapperService } from "app/core/index";
-
-import { ChannelSubject } from "../handlers/index";
+import { ChannelSubject, JqueryWrapper } from "../handlers/index";
 import { ChannelConfig, ConnectionState, ChannelEvent } from "../models/index";
+
+
 
 @Injectable()
 export class SignalrChannelService {
@@ -21,8 +21,8 @@ export class SignalrChannelService {
     private hubProxy: any;
     private subjects = new Array<ChannelSubject>();
 
-    public constructor(private windowWrapperService: WindowWrapperService) {
-        if (windowWrapperService.$ === undefined || windowWrapperService.$.hubConnection === undefined) {
+    public constructor() {
+        if (JqueryWrapper.$ === undefined || JqueryWrapper.$.hubConnection === undefined) {
             throw new Error("The variable '$' or the .hubConnection() function are not defined...please check the SignalR scripts have been loaded properly");
         }
 
@@ -32,7 +32,7 @@ export class SignalrChannelService {
         this.error$ = this.errorSubject.asObservable();
         this.starting$ = this.startingSubject.asObservable();
 
-        this.hubConnection = windowWrapperService.$.hubConnection();
+        this.hubConnection = JqueryWrapper.$.hubConnection();
         this.hubConnection.url = channelConfig.url;
         this.hubProxy = this.hubConnection.createHubProxy(channelConfig.hubName);
 
@@ -40,16 +40,16 @@ export class SignalrChannelService {
             let newState = ConnectionState.Connecting;
 
             switch (state.newState) {
-                case windowWrapperService.$.signalR.connectionState.connecting:
+                case JqueryWrapper.$.signalR.connectionState.connecting:
                     newState = ConnectionState.Connecting;
                     break;
-                case windowWrapperService.$.signalR.connectionState.connected:
+                case JqueryWrapper.$.signalR.connectionState.connected:
                     newState = ConnectionState.Connected;
                     break;
-                case windowWrapperService.$.signalR.connectionState.reconnecting:
+                case JqueryWrapper.$.signalR.connectionState.reconnecting:
                     newState = ConnectionState.Reconnecting;
                     break;
-                case windowWrapperService.$.signalR.connectionState.disconnected:
+                case JqueryWrapper.$.signalR.connectionState.disconnected:
                     newState = ConnectionState.Disconnected;
                     break;
             }
@@ -120,7 +120,7 @@ export class SignalrChannelService {
     }
 
     private getConfiguredChannelConfig(): ChannelConfig {
-        let signalrUrl = this.windowWrapperService.location.origin + "/signalr";
+        let signalrUrl = window.location.origin + "/signalr";
         let channelConfig = new ChannelConfig();
         channelConfig.url = signalrUrl;
         channelConfig.hubName = "ChannelHub"; // This name has to match the Type-Name on the Server-Class

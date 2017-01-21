@@ -2,6 +2,8 @@
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from "@angular/forms";
 import { Customer } from "../shared/models/index";
 
+import { CommonModule } from "@angular/common";
+
 @Component({
     moduleId: module.id,
     templateUrl: "./sample-form.component.html"

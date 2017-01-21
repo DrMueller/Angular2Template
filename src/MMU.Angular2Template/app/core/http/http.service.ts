@@ -2,7 +2,7 @@
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 
-import * as http from "./index";
+import { ContentType } from "./index";
 
 @Injectable()
 export class HttpService {
@@ -12,8 +12,8 @@ export class HttpService {
         return this.processResponse(this.http.get(url));
     }
 
-    public post<T>(url: string, body: any, contentType: http.ContentType): Promise<T> {
-        let headers = new Headers();
+    public post<T>(url: string, body: any, contentType: ContentType): Promise<T> {
+        const headers = new Headers();
         headers.append("Content-Type", this.mapContentType(contentType));
 
         const requestoptions = new RequestOptions({
@@ -29,9 +29,9 @@ export class HttpService {
             .catch(this.handleError);
     }
 
-    private mapContentType(contentType: http.ContentType): string {
+    private mapContentType(contentType: ContentType): string {
         switch (contentType) {
-            case http.ContentType.ApplicationJson:
+            case ContentType.ApplicationJson:
                 return "application/json";
             default:
                 throw new RangeError(contentType.toString() + " is not recognized");

@@ -148,7 +148,7 @@ gulp.task("watch", ["watch.ts", "watch.html", "watch.less", "watch.sass"]);
 gulp.task("watch.ts",
     ["ts"],
     function () {
-        return gulp.watch("app/**/*.ts", ["ts"]);
+        return gulp.watch("app/**/*.ts", ["ts", "tslint"]);
     });
 
 gulp.task("watch.html",
