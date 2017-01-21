@@ -2,7 +2,7 @@
 import { Subject } from "rxjs/Subject";
 import { Observable } from "rxjs/Observable";
 
-import { WindowWrapperService } from "app/core/services/index";
+import { WindowWrapperService } from "app/core/index";
 
 import { ChannelSubject } from "../handlers/index";
 import { ChannelConfig, ConnectionState, ChannelEvent } from "../models/index";

@@ -21,7 +21,7 @@ export class GenericValidationComponent implements OnInit {
 
     public constructor(
         private formBuilder: FormBuilder,
-        private validationDispatcher: ValidationDispatcherService, 
+        private validationDispatcher: ValidationDispatcherService,
         private validationBuildingFactory: ValidationBuildingFactory) {
     }
 
@@ -36,7 +36,7 @@ export class GenericValidationComponent implements OnInit {
             this.controlValidationErrors = this.validationDispatcher.getValidationErrors(this.individualForm);
         });
     }
-   
+
     private buildForm(): void {
         this.individualForm = this.formBuilder.group({
             firstNameControl: ["", [Validators.required, Validators.minLength(5)]],

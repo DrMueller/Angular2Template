@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from "@angular/forms"; 
+import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn } from "@angular/forms";
 import { Customer } from "../shared/models/index";
 
 @Component({
@@ -23,7 +23,7 @@ export class SampleFormComponent implements OnInit {
     }
 
     // setValue requires a value provided for each formControl
-    public setValueFromComponent(): void { 
+    public setValueFromComponent(): void {
         this.customerForm.setValue({
             firstNameControl: "Hans",
             middleNameControl: "Peter"
@@ -46,7 +46,7 @@ export class SampleFormComponent implements OnInit {
             firstNameControl: "Matthias",
             middleNameControl: "",
             emailControl: "",
-            disabledControl: { value :"Disabled", disabled: true }
+            disabledControl: { value: "Disabled", disabled: true }
         });
     }
 }

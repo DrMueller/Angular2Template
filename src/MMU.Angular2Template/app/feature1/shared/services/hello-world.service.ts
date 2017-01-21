@@ -4,7 +4,7 @@ import { Http, Response } from "@angular/http";
 import { HelloWorld } from "../models/hello-world.model";
 import { Observable } from "rxjs/Observable";
 
-import { HttpService } from "../../../shared/http/index";
+import { HttpService } from "app/core/index";
 
 
 @Injectable()

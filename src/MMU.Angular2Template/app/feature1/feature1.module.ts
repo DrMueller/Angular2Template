@@ -4,12 +4,10 @@ import { FormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
 import { feature1Routing } from "./feature1.routing";
 
-import { HttpService }  from "../shared/http/index";
-
 import * as services from "./shared/services/index";
 import { Feature1Component } from "./feature1.component";
 import * as part1List from "./part1-list/index";
-import * as part1 from "./part1/index"; 
+import * as part1 from "./part1/index";
 
 @NgModule({
     imports: [
@@ -25,8 +23,7 @@ import * as part1 from "./part1/index";
 
     ],
     providers: [
-        services.HelloWorldService,
-        HttpService
+        services.HelloWorldService
     ]
 })
 

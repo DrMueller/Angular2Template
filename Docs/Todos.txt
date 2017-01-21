@@ -1,3 +1,2 @@
-Lint (See John Papas template)
 Unit-Tests
 Pretty Navigation 

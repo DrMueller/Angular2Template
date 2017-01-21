@@ -7,5 +7,5 @@
 
     public height: number;
 
-    public isActive: boolean; 
+    public isActive: boolean;
 }

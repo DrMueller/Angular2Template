@@ -1,8 +1,9 @@
 ﻿// external
 import { NgModule } from "@angular/core";
 
-// core-Services
-import { WindowWrapperService } from "./services/index";
+// core-services
+import { WindowWrapperService } from "./window-wrapping/index";
+import { HttpService } from "./http/index";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { WindowWrapperService } from "./services/index";
     declarations: [
     ],
     providers: [
-        { provide: WindowWrapperService, useValue: window }
+        { provide: WindowWrapperService, useValue: window },
+        HttpService
     ]
 })
 

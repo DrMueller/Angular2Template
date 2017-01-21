@@ -12,8 +12,7 @@ import { routing, appRoutingProviders } from "./app.routing";
 import { CoreModule } from "./core/index";
 
 // domain-features
-import { Feature1Module } from "./feature1/index"; 
-//import { SignalrFeatureModule } from "./signalr-feature/index";
+import { Feature1Module } from "./feature1/index";
 import { ReactiveFormsModule } from "./reactive-forms/index";
 
 @NgModule({

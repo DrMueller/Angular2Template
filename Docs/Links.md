@@ -20,6 +20,11 @@ https://github.com/ivogabe/gulp-typescript
 https://blog.sstorie.com/integrating-angular2-and-signalr-part-1/ 
 
 
+#TSLint
+## Rules
+Found here: https://palantir.github.io/tslint/usage/tslint-json/ 
+
+
 # Typescript
 ## Design-Patterns
 https://github.com/torokmark/design_patterns_in_typescript

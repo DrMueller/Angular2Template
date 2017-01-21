@@ -9,7 +9,7 @@ import { FormValidationModule } from "app/shared/form-validation/index";
 
 // Feature
 import { reactiveFormsRouting } from "./reactive-forms.routing";
-import { ReactiveFormsComponent } from "./reactive-forms.component"; 
+import { ReactiveFormsComponent } from "./reactive-forms.component";
 
 // Feature-Parts
 import { SampleFormComponent } from "./sample-form/index";

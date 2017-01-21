@@ -7,7 +7,7 @@ import * as helloSignalr from "./hello-signalr/index";
 
 const feature1Routes: Routes = [
     {
-        path: "signalrfeature",
+        path: "",
         component: SignalrFeatureComponent,
         children: [
             { path: "", redirectTo: "helloSignalr", pathMatch: "full" },

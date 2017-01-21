@@ -14,9 +14,9 @@ export class HttpService {
 
     public post<T>(url: string, body: any, contentType: http.ContentType): Promise<T> {
         let headers = new Headers();
-        headers.append('Content-Type', this.mapContentType(contentType));
+        headers.append("Content-Type", this.mapContentType(contentType));
 
-        var requestoptions = new RequestOptions({
+        const requestoptions = new RequestOptions({
             headers: headers
         });
 
@@ -53,9 +53,9 @@ export class HttpService {
         // We pass the error via promise to give the client the possibility to show a nice message
         let errMsg: string;
         if (error instanceof Response) {
-            const body = error.json() || '';
+            const body = error.json() || "";
             const err = body.error || JSON.stringify(body);
-            errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+            errMsg = `${error.status} - ${error.statusText || ""} ${err}`;
         } else {
             errMsg = error.message ? error.message : error.toString();
         }
