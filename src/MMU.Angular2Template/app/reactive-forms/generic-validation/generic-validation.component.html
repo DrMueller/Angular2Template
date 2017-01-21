@@ -8,7 +8,7 @@
               [formGroup]="individualForm"
               novalidate>
             <fieldset>
-                <div class="form-group" [class.has-error]="brokenValidations.firstNameControl">
+                <div class="form-group" [class.has-error]="controlValidationErrors.firstNameControl">
                     <label class="col-md-2 control-label" for="firstNameId">First Name</label>
                     <div class="col-md-8">
                         <input class="form-control"
@@ -16,17 +16,12 @@
                                type="text"
                                placeholder="First Name (required)"
                                formControlName="firstNameControl" />
-                        <div class="help-block" *ngIf="brokenValidations.firstNameControl">
-                            <ul>
-                                <li *ngFor="let brokenValidation of brokenValidations.firstNameControl">
-                                    {{ brokenValidation.errorMessage }}
-                                </li>
-                            </ul>
-                        </div>
+                        
+                        <validation-message [validationErrorCollection]="controlValidationErrors.firstNameControl"></validation-message>
                     </div>
                 </div>
                 
-                <div class="form-group" [class.has-error]="brokenValidations.lastNameControl">
+                <div class="form-group" [class.has-error]="controlValidationErrors.lastNameControl">
                     <label class="col-md-2 control-label" for="lastNameId">Last Name</label>
                     <div class="col-md-8">
                         <input class="form-control"
@@ -34,13 +29,8 @@
                                type="text"
                                placeholder="Last Name (required)"
                                formControlName="lastNameControl" />
-                        <div class="help-block" *ngIf="brokenValidations.lastNameControl">
-                            <ul>
-                                <li *ngFor="let brokenValidation of brokenValidations.lastNameControl">
-                                    {{ brokenValidation.errorMessage }}
-                                </li>
-                            </ul>
-                        </div>
+                        
+                        <validation-message [validationErrorCollection]="controlValidationErrors.lastNameControl"></validation-message>
                     </div>
                 </div>
             </fieldset>

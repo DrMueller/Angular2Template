@@ -5,5 +5,4 @@ export class ValidationSet {
         public readonly validationRuleKey: string,
         public readonly validationErrror: ValidationError
     ) { }
-
 }

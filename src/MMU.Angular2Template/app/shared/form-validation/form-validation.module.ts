@@ -1,26 +1,27 @@
-﻿import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { TabsModule } from "ng2-bootstrap";
-import { HttpModule } from "@angular/http";
+﻿// external
+import { CommonModule } from "@angular/common";
+import { NgModule } from "@angular/core";
 
-import { ValidationAffiliation, ValidationDispatcherService, ValidationError, ValidationSet } from "./index";
+// components
+// TODO: Barrel doesn't work here for some reason, check bacck on GitHub issues
+import { ValidationMessageComponent } from "./components/validation-message/validation-message.component";
+
+// services
+import { ValidationBuildingFactory } from "./services/index";
 
 
 @NgModule({
     exports: [
-        ValidationAffiliation,
-        //ValidationDispatcherService,
-        ValidationError,
-        ValidationSet
+        ValidationMessageComponent
     ],
     imports: [
-        BrowserModule,
-        HttpModule
+        CommonModule
     ],
     declarations: [
-        ValidationAffiliation, ValidationDispatcherService, ValidationError, ValidationSet
+        ValidationMessageComponent
     ],
     providers: [
+        ValidationBuildingFactory // TODO: Not good idea to provide on shared-module, check back best practices
     ]
 })
 

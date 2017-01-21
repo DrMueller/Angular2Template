@@ -8,6 +8,14 @@ Currently nothing working really. But the switch to sass is easy and already pre
 Some of these Controls are not currently supported in ReactiveForms, thus need the [(ngModel)] to work properly.
 THey're currently updating, so you might want to check the Issues on GitHub.
 
+## Node-Sass
+### [Windows Error ] %1 is not a valid win32 application
+https://github.com/sass/node-sass/issues/468
+TLDR:
+1. npm rm node-sass
+2. npm install node-sass
+
+
 ### Imports
 For Some reason, it seems like we have to import the Modules on each module individually, not just on the root one.
 

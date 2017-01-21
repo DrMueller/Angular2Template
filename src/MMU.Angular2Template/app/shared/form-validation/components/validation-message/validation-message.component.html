@@ -1,0 +1,7 @@
+﻿<div class="help-block" *ngIf="validationErrorCollection">
+    <ul>
+        <li *ngFor="let brokenValidation of validationErrorCollection">
+            {{ brokenValidation.errorMessage }}
+        </li>
+    </ul>
+</div>

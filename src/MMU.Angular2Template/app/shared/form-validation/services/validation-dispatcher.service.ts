@@ -1,6 +1,8 @@
-﻿import { AbstractControl, FormGroup } from "@angular/forms";
+﻿// external
+import { AbstractControl, FormGroup } from "@angular/forms";
 
-import { ValidationAffiliation, ValidationError, ValidationSet } from "../index";
+// shared-feature
+import { ValidationAffiliation, ValidationSet, IControlValidationErrors, ValidationErrorCollection } from "../index";
 
 export class ValidationDispatcherService {
     private validationAffiliations: ValidationAffiliation[];
@@ -9,8 +11,8 @@ export class ValidationDispatcherService {
         this.validationAffiliations = validationAffiliations;
     }
 
-    public getValidationErrors(formGroup: FormGroup): { [controlName: string]: ValidationError[] } {
-        let result: { [controlName: string]: ValidationError[] } = {};
+    public getValidationErrors(formGroup: FormGroup): IControlValidationErrors {
+        const result: IControlValidationErrors = {};
 
         for (let controlName in formGroup.controls) {
             if (formGroup.controls.hasOwnProperty(controlName)) {
@@ -21,7 +23,7 @@ export class ValidationDispatcherService {
         return result;
     }
 
-    private getControlValidationErrors(formGroup: FormGroup, controlName: string): ValidationError[] {
+    private getControlValidationErrors(formGroup: FormGroup, controlName: string): ValidationErrorCollection {
         const control = formGroup.controls[controlName];
 
         const controlErorrKeys = this.getControlErrorKeys(control);

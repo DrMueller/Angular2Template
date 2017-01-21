@@ -26,3 +26,4 @@ https://github.com/torokmark/design_patterns_in_typescript
  
 ## Module-Resolution
 https://github.com/Microsoft/TypeScript/issues/5039 
+

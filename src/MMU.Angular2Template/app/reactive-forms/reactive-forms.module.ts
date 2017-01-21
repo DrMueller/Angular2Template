@@ -4,8 +4,8 @@ import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule as ngRxForms, FormBuilder } from "@angular/forms";
 import { AlertModule, DropdownModule, ProgressbarModule, TabsModule } from "ng2-bootstrap";
 
-// Shred 
-import { SharedModule, ValidationDispatcherService } from "app/shared/index";
+// Shared
+import { FormValidationModule } from "app/shared/form-validation/index";
 
 // Feature
 import { reactiveFormsRouting } from "./reactive-forms.routing";
@@ -23,16 +23,12 @@ import { GenericValidationComponent } from "./generic-validation/index";
         AlertModule.forRoot(),
         ProgressbarModule.forRoot(),
         TabsModule,
-        //SharedModule
+        FormValidationModule
     ],
     declarations: [
         SampleFormComponent,
         ReactiveFormsComponent,
         GenericValidationComponent
-    ],
-    providers: [
-        FormBuilder,
-        ValidationDispatcherService
     ]
 })
 

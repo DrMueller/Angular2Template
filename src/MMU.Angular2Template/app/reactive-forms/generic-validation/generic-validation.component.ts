@@ -2,25 +2,27 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators, AbstractControl } from "@angular/forms";
 
+// Shared 
+import { IControlValidationErrors, ValidationSet, ValidationAffiliation, ValidationError, ValidationDispatcherService, ValidationBuildingFactory } from "app/shared/form-validation/index";
+
 // Feature
 import { Customer } from "../shared/models/index";
-
-import { ValidationSet, ValidationAffiliation, ValidationError, ValidationDispatcherService } from "app/shared/index";
 
 @Component({
     moduleId: module.id,
     styleUrls: ["./generic-validation.component.css"],
-    templateUrl: "./generic-validation.component.html"
+    templateUrl: "./generic-validation.component.html",
+    providers: [ValidationDispatcherService]
 })
 
-
 export class GenericValidationComponent implements OnInit {
-
-    // At the moment, Typescript doesnt have some cool Dictionary-Type
-    public brokenValidations: { [key: string]: ValidationError[] } = {};
+    public controlValidationErrors: IControlValidationErrors = {};
     public individualForm: FormGroup;
 
-    public constructor(private formBuilder: FormBuilder, private validationDispatcher: ValidationDispatcherService) {
+    public constructor(
+        private formBuilder: FormBuilder,
+        private validationDispatcher: ValidationDispatcherService, 
+        private validationBuildingFactory: ValidationBuildingFactory) {
     }
 
     public ngOnInit(): void {
@@ -31,7 +33,7 @@ export class GenericValidationComponent implements OnInit {
 
     private initializeFormWatcher(): void {
         this.individualForm.valueChanges.subscribe(() => {
-            this.brokenValidations = this.validationDispatcher.getValidationErrors(this.individualForm);
+            this.controlValidationErrors = this.validationDispatcher.getValidationErrors(this.individualForm);
         });
     }
    
@@ -43,18 +45,35 @@ export class GenericValidationComponent implements OnInit {
     }
 
     private initializeValidationDefinition(): void {
-        let validationAffiliations: ValidationAffiliation[] = [
-            new ValidationAffiliation("firstNameControl", [
-                new ValidationSet("required", new ValidationError("First name is required.")),
-                new ValidationSet("minlength", new ValidationError("The first name has to be at least 5 characters long."))
-            ]),
-            new ValidationAffiliation("lastNameControl", [
-                new ValidationSet("required", new ValidationError("First name is required.")),
-                new ValidationSet("minlength", new ValidationError("The last name has to be at least 10 characters long.")),
-                new ValidationSet("maxlength", new ValidationError("The last name has to be less than 3 characters long."))
-            ])
-        ];
+        const validationBuilder = this.validationBuildingFactory.createBuilder();
+        const validationCollection =
+            validationBuilder.
+                startBuildingAffiliation("firstNameControl")
+                    .startBuldingSet()
+                        .withRuleKey("required")
+                        .withErrorMessage("First name is required.")
+                    .buildValidationSet()
+                    .startBuldingSet()
+                        .withRuleKey("minlength")
+                        .withErrorMessage("The first name has to be at least 5 characters long.")
+                    .buildValidationSet()
+                .buildAffiliation()
+                .startBuildingAffiliation("lastNameControl")
+                    .startBuldingSet()
+                        .withRuleKey("required")
+                        .withErrorMessage("First name is required.")
+                    .buildValidationSet()
+                    .startBuldingSet()
+                        .withRuleKey("minlength")
+                        .withErrorMessage("The last name has to be at least 10 characters long.")
+                    .buildValidationSet()
+                    .startBuldingSet()
+                        .withRuleKey("maxlength")
+                        .withErrorMessage("The last name has to be less than 3 characters long.")
+                    .buildValidationSet()
+                .buildAffiliation()
+            .buildCollection();
 
-        this.validationDispatcher.initialize(validationAffiliations);
+        this.validationDispatcher.initialize(validationCollection);
     };
 }

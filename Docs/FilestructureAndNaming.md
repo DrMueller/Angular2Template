@@ -1,23 +1,20 @@
 # Structure
-## app core-folder
-### General
-The core-folder on the app-level contains technical assets and means. Examples: <br />
-+ Globally avaliable imports
-+ Wrapper to global objects
+## Modules
+### Feature-Modules
 
-If the types are injected, they should be defined on the app-level, thus should be threated as literal *singletons* and never contain states.
-
-## app features-folders
 ### General
-+ Every functional-feature has its own folder directly under *app*.
-+ Every functional-feature has its own module, routing and a main-component.
-+ Every functional-feature shoudl only export its module (see barrels-topic).
+See https://angular.io/docs/ts/latest/cookbook/ngmodule-faq.html#!#q-module-provider-visibility 
 
-## app shared-folder
-### General
-The shared-folder on the app-level contains features, which are used on several functional- or non-functional features. <br />
-They should be injected on each feature and not on the app-level in order to assure every feature has its instance. <br />
-The shared-feature barrel should contain all the exports to make it possible to use this feature. For example: All services, modules, enums etc. should be exported, if they can be used form the outs. <br />
+#### Domain
+Module, which is dedicated to one domain of the application. 
+
+#### Routed
+
+#### Routing
+
+#### Service
+
+#### Widget
 
 
 # Barrels
@@ -34,6 +31,8 @@ This leads to some general conclusions:
 + Types from the same level can be either imported via barrel, when they're also interesting for other levels, or directly with the app-name. For example: Since *feature1.routing* doesn't need to be propagated to higher levels, thus is not in the barrel, *feature1.module* imports it directly.
 
 __Random-thoughts__:Since the types in the core- and shared-folders fullfil a different requirement, we might split the barrel-rules for functional- and non-functional features.
+
+
 
 
 # Imports
