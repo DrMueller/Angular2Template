@@ -26,3 +26,6 @@ import { ValidationBuildingFactory } from "./services/index";
         ValidationBuildingFactory // TODO: Not good idea to provide on shared-module, check back best practices
     ]
 })
+
+export class FormValidationModule {
+}

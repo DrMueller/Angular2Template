@@ -2,6 +2,9 @@
 ## Folder-Structure guide 
 https://angular.io/styleguide --> "Here is a compliant folder and file structure"
 
+## Material-Design
+https://github.com/angular/material2
+
 ## Modules
 https://angular.io/docs/ts/latest/cookbook/ngmodule-faq.html#!#q-module-provider-visibility 
 https://johnpapa.net/introducing-angular-modules-feature-modules-2/ 

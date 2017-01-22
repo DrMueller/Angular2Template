@@ -7,6 +7,8 @@ var map = {
     'main': 'app/main.js',
     '@angular': 'node_modules/@angular',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
+    //'@angular/material': 'npm:@angular/material/bundles/material.umd.js',
+    '@angular/material': 'node_modules/@angular/material/bundles/material.umd.js',
     'rxjs': 'node_modules/rxjs',
     'ng2-bootstrap': 'node_modules/ng2-bootstrap',
 };

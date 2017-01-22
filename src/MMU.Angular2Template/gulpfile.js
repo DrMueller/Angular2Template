@@ -28,7 +28,8 @@ gulp.task("nm",
             "jquery/dist/jquery.*js",
             "bootstrap/dist/js/bootstrap.*js",
             "ms-signalr/jquery.signalR.js",
-            "ng2-bootstrap/**"
+            "ng2-bootstrap/**",
+            "hammerjs/**"
         ],
         {
             cwd: "node_modules/**"

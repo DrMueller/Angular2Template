@@ -2,7 +2,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { TabsModule } from "ng2-bootstrap";
-import { HttpModule } from "@angular/http";
+import { MaterialModule } from "@angular/material";
 
 // app
 import { AppComponent } from "./app.component";
@@ -18,13 +18,13 @@ import { MdTestingModule } from "./md-testing/index";
 
 @NgModule({
     imports: [
+        TabsModule.forRoot(),
         BrowserModule,
         routing,
+        MaterialModule.forRoot(),
+        CoreModule,
         Feature1Module,
         ReactiveFormsModule,
-        TabsModule.forRoot(),
-        HttpModule,
-        CoreModule,
         MdTestingModule
     ],
     declarations: [
